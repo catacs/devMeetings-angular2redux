@@ -1,5 +1,9 @@
 import {NgModule} from '@angular/core'
 import {BrowserModule} from '@angular/platform-browser'
+
+// Importar angular material
+import {MaterialModule} from '@angular/material'
+
 // 2. No olvides importarlo
 import {FormsModule} from '@angular/forms'
 
@@ -12,7 +16,8 @@ import {ListComponent} from './components/list/list'
   // 4/ 1. Lo primero es añadir FormsModule
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    MaterialModule.forRoot()
   ],
 
   declarations: [
