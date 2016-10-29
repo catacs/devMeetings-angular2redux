@@ -1,4 +1,4 @@
-import {Component}  from '@angular/core';
+import {Component} from '@angular/core'
 
 @Component({
   moduleId: __moduleName,   // Hack para System.js rutas relativas
@@ -8,12 +8,4 @@ import {Component}  from '@angular/core';
 })
 
 export class App {
-	name : string;
-	isVisible: boolean;
-  list: any[];
-	constructor() {
-		this.name = 'Todo list';
-		this.isVisible = true;
-    this.list = [{ id: 0, title: 'Paco', class: 'red' }, { id: 1, title: 'Pepe', class: 'red' }];
-	}
 }

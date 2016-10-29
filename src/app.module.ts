@@ -1,12 +1,25 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core'
+import {BrowserModule} from '@angular/platform-browser'
+// 2. No olvides importarlo
+import {FormsModule} from '@angular/forms'
 
-import {App} from './components/app/app';
+import {App} from './components/app/app'
+import {GroceriesContainer} from './components/groceries/groceries'
+import {ListComponent} from './components/list/list'
+
 
 @NgModule({
-  imports: [ BrowserModule ], // Modules
-  declarations: [ App ], // Components
-  bootstrap: [ App ] // Root component
-})
+  // 4/ 1. Lo primero es añadir FormsModule
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
 
-export class AppModule{}
+  declarations: [
+    App,
+    GroceriesContainer,
+    ListComponent
+  ],
+  bootstrap: [ App ]
+})
+export class AppModule {}
