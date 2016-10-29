@@ -33,7 +33,10 @@ System.config({
     // Añadir Angular Material en config.js (SystemJS)
     '@angular/material': 'npm:@angular/material/material.umd.js',
 
-    
+    // 2/ Añadir estas dos lineas a config.js
+    '@ngrx/core': 'npm:@ngrx/core/bundles/core.umd.js',
+    '@ngrx/store': 'npm:@ngrx/store/bundles/store.umd.js',
+
     'rxjs': 'npm:rxjs',
     'typescript': 'npm:typescript@2.0.2/lib/typescript.js'
   },

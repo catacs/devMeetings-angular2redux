@@ -2,7 +2,7 @@
 <md-content>
   <section>
     <list [list]="list" (delete)="deleteList($event)"
-      *ngFor="let list of lists"></list>
+      *ngFor="let list of lists$ | async"></list>
 
     <!--10/ Cada componente de Angular Material tiene diferente API-->
     <!--Lo mejor es consultar la doc de cada uno-->

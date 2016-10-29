@@ -7,6 +7,10 @@ import {MaterialModule} from '@angular/material'
 // 2. No olvides importarlo
 import {FormsModule} from '@angular/forms'
 
+// 2/ Importamos StoreModule y nuestro reducer principal
+import { StoreModule } from '@ngrx/store'
+import { reducer } from './reducer'
+
 import {App} from './components/app/app'
 import {GroceriesContainer} from './components/groceries/groceries'
 import {ListComponent} from './components/list/list'
@@ -17,7 +21,9 @@ import {ListComponent} from './components/list/list'
   imports: [
     BrowserModule,
     FormsModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    // Iniciamos nuestra store y definimos nuestro state principal
+    StoreModule.provideStore({ lists: reducer })
   ],
 
   declarations: [
