@@ -1,5 +1,7 @@
 <!--Añadimos evento click-->
+<p>
 <md-card>
   {{list.title}} - {{list.items?.length}} items
-  <button md-raised-button color="primary" (click)="deleteItem()">Borrar</button>
+  <button md-raised-button color="primary" (click)="deleteItem()" layout-align="end right">Borrar</button>
 </md-card>
+<p>
