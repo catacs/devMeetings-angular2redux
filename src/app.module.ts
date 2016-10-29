@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core'
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser'
 
 // Importar angular material
@@ -25,6 +25,7 @@ import {ListComponent} from './components/list/list'
     GroceriesContainer,
     ListComponent
   ],
-  bootstrap: [ App ]
+  bootstrap: [ App ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
