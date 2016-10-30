@@ -1,7 +1,7 @@
 <h2>Listas de compra:</h2>
 <md-content>
   <section>
-    <list [list]="list" (delete)="deleteList($event)"
+    <list [routerLink]="['./details', list.id]" [list]="list" (delete)="deleteList($event)"
       *ngFor="let list of lists$ | async"></list>
 
     <!--10/ Cada componente de Angular Material tiene diferente API-->

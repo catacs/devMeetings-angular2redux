@@ -1,12 +1,13 @@
 import {Component} from '@angular/core'
 import { Store } from '@ngrx/store'
-import { ADD_LIST, DELETE_LIST } from '../../reducer'
+import { ADD_LIST, DELETE_LIST } from '../../reducers/reducer'
 
 @Component({
   moduleId: __moduleName,
   selector: 'groceries',
   templateUrl: 'groceries.html'
 })
+
 export class GroceriesContainer {
   lists$
   // Definimos una lista temporal como modelo del formulario
@@ -26,7 +27,7 @@ export class GroceriesContainer {
   // 8/ Añadimos la lista al array
   createList() {
     const randomId = Math.floor(Math.random() * 1000)
-    const list = Object.assign({}, this.tempList, { id: randomId })
+    const list = Object.assign({}, this.tempList, { id: randomId , items: []})
     // Usamos store.dispatch, siempre con estructure {type, payload}
     this.store.dispatch({ type: ADD_LIST, payload: list })
   }

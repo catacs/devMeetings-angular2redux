@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser'
 
 // Importar angular material
@@ -9,12 +9,23 @@ import {FormsModule} from '@angular/forms'
 
 // 2/ Importamos StoreModule y nuestro reducer principal
 import { StoreModule } from '@ngrx/store'
-import { reducer } from './reducer'
+import { reducer } from './reducers/reducer'
 
-import {App} from './components/app/app'
-import {GroceriesContainer} from './components/groceries/groceries'
-import {ListComponent} from './components/list/list'
+// Importamos modulos necesarios
+import { Routes, RouterModule } from '@angular/router'
 
+import { App} from './components/app/app'
+import { GroceriesContainer } from './components/groceries/groceries'
+import { ListComponent } from './components/list/list'
+import { GroceriesDetailComponent } from './components/grocerie-details/grocerie-details'
+
+// 7/ Definimos rutas
+const routes: Routes = [
+  { path: '', component: GroceriesContainer },
+  { path: 'details/:id', component: GroceriesDetailComponent },
+  // Podemos definir rutas por defecto
+  { path: '**', redirectTo: '' }
+]
 
 @NgModule({
   // 4/ 1. Lo primero es añadir FormsModule
@@ -23,15 +34,19 @@ import {ListComponent} from './components/list/list'
     FormsModule,
     MaterialModule.forRoot(),
     // Iniciamos nuestra store y definimos nuestro state principal
-    StoreModule.provideStore({ lists: reducer })
+    StoreModule.provideStore({ lists: reducer }),
+    // Inicializar rutas
+    RouterModule.forRoot(routes)
   ],
 
   declarations: [
     App,
     GroceriesContainer,
-    ListComponent
+    ListComponent,
+    GroceriesDetailComponent
   ],
   bootstrap: [ App ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
+
 export class AppModule {}
