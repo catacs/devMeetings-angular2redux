@@ -3,7 +3,7 @@ import { Action } from '@ngrx/store'
 // 4/ Definimos estado inicial
 export const initialState = [
     { id: '0', title: 'Lista 1', items:[] },
-    { id: '1', title: 'Lista 2', items:[1] }
+    { id: '1', title: 'Lista 2', items:[] }
 ]
 
 // Definimos tipos de actions
@@ -20,9 +20,15 @@ function deleteList(state, id) {
   return state.filter(list => list.id !== id);
 }
 
-function addListItem(state, list) {
+function addListItem(state, { list, item }) {
   // TODO Añadir item
-  return state;
+  debugger
+  return state.map(editList => {
+    if (editList.id === list.id) {
+      return Object.assign({}, list, { items: [...list.items, item] });
+    }
+    return editList;
+  });
 }
 
 function deleteListItem(state, list) {

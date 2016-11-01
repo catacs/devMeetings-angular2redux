@@ -14,10 +14,11 @@ import { reducer } from './reducers/reducer'
 // Importamos modulos necesarios
 import { Routes, RouterModule } from '@angular/router'
 
-import { App} from './components/app/app'
+import { App } from './components/app/app'
 import { GroceriesContainer } from './components/groceries/groceries'
 import { ListComponent } from './components/list/list'
 import { GroceriesDetailComponent } from './components/grocerie-details/grocerie-details'
+import { ListItemComponent } from './components/item/item'
 
 // 7/ Definimos rutas
 const routes: Routes = [
@@ -28,7 +29,6 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  // 4/ 1. Lo primero es añadir FormsModule
   imports: [
     BrowserModule,
     FormsModule,
@@ -43,6 +43,7 @@ const routes: Routes = [
     App,
     GroceriesContainer,
     ListComponent,
+    ListItemComponent,
     GroceriesDetailComponent
   ],
   bootstrap: [ App ],
